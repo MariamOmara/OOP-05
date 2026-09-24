@@ -1,4 +1,4 @@
-﻿ // Q1 PRACT
+﻿// Q1 PRACT
 // public class Shipment
 //{
 //    public int Id { get; set; }
@@ -20,12 +20,12 @@
 //        Shipment shipment1 = new Shipment();
 //        shipment1.Id = 1;
 
-        // Assigning one object variable to another
-        // Both variables refer to the same object.
-        //Shipment shipment2 = shipment1;
+// Assigning one object variable to another
+// Both variables refer to the same object.
+//Shipment shipment2 = shipment1;
 
-        // Creating an actual copy
-        // shipment3 is a new object.
+// Creating an actual copy
+// shipment3 is a new object.
 //        Shipment shipment3 = shipment1.CopyShipment();
 
 //        Console.WriteLine(shipment1 == shipment2);
@@ -109,3 +109,26 @@
 // and optionally implemented in another part.
 
 // d) If a partial method has no implementation, it is removed during compilation
+
+
+
+
+
+
+
+
+
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Shipment shipment = new Shipment();
+
+        shipment.TrackingStatus = "In Transit";
+
+        shipment.UpdateTrackingStatus("Out For Delivery");
+    }
+}

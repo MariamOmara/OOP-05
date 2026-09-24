@@ -96,3 +96,27 @@
 //        Console.WriteLine("Tracking Status: " + TrackingStatus);
 //    }
 //}
+
+
+
+//Q10
+
+//using System;
+
+//public partial class Shipment
+//{
+//    public int Id { get; set; }
+
+//    public string TrackingStatus { get; set; }
+
+//    // Declare Partial Method
+//    partial void OnTrackingStatusChanged(string newStatus);
+
+//    public void UpdateTrackingStatus(string newStatus)
+//    {
+//        TrackingStatus = newStatus;
+
+//        // Call Partial Method
+//        OnTrackingStatusChanged(newStatus);
+//    }
+//}
