@@ -1,16 +1,37 @@
-﻿namespace OOPASS_05
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
-    }
-}
+﻿ // Q1 PRACT
+// public class Shipment
+//{
+//    public int Id { get; set; }
+
+//    public Shipment CopyShipment()
+//    {
+//        return new Shipment
+//        {
+//            Id = this.Id
+//        };
+//    }
+//}
 
 
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        Shipment shipment1 = new Shipment();
+//        shipment1.Id = 1;
 
+        // Assigning one object variable to another
+        // Both variables refer to the same object.
+        //Shipment shipment2 = shipment1;
+
+        // Creating an actual copy
+        // shipment3 is a new object.
+//        Shipment shipment3 = shipment1.CopyShipment();
+
+//        Console.WriteLine(shipment1 == shipment2);
+//        Console.WriteLine(shipment1 == shipment3);
+//    }
+//}
 
 
 
