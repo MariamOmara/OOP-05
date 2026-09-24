@@ -1446,6 +1446,18 @@
 //}
 
 
+//public class DeliveryAddress
+//{
+//    public string City { get; set; }
+
+//    public string Street { get; set; }
+//}
+
+
+
+
+
+
 public class DeliveryAddress
 {
     public string City { get; set; }

@@ -21,7 +21,20 @@ using System;
 
 public partial class Shipment
 {
-    // Implement Partial Method
+    public string TrackingStatus { get; set; }
+
+    public string GetTrackingStatus()
+    {
+        return TrackingStatus;
+    }
+
+    public void UpdateTrackingStatus(string newStatus)
+    {
+        TrackingStatus = newStatus;
+
+        OnTrackingStatusChanged(newStatus);
+    }
+
     partial void OnTrackingStatusChanged(string newStatus)
     {
         Console.WriteLine(

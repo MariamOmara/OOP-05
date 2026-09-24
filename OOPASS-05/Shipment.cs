@@ -120,3 +120,108 @@
 //        OnTrackingStatusChanged(newStatus);
 //    }
 //}
+
+
+
+
+
+using System;
+
+public partial class Shipment
+{
+    public string TrackingCode { get; set; }
+
+    public string ShipmentType { get; set; }
+
+    public double Weight { get; set; }
+
+    public DeliveryAddress DeliveryAddress { get; set; }
+
+    public static int TotalShipmentsCreated = 0;
+
+    // Static Constructor
+    static Shipment()
+    {
+        TotalShipmentsCreated = 0;
+
+        Console.WriteLine("Shipment System Initialized");
+    }
+
+    // Normal Constructor
+    public Shipment()
+    {
+        TotalShipmentsCreated++;
+    }
+
+    // Constructor used for copies
+    private Shipment(bool countAsNewShipment)
+    {
+        if (countAsNewShipment)
+        {
+            TotalShipmentsCreated++;
+        }
+    }
+
+    // =========================
+    // Object Copying
+    // =========================
+
+    public Shipment CopyShipment()
+    {
+        Shipment copy = new Shipment(false);
+
+        copy.TrackingCode = this.TrackingCode;
+        copy.ShipmentType = this.ShipmentType;
+        copy.Weight = this.Weight;
+        copy.DeliveryAddress = this.DeliveryAddress;
+        copy.TrackingStatus = this.TrackingStatus;
+
+        return copy;
+    }
+
+    // =========================
+    // Shallow Copy
+    // =========================
+
+    public Shipment ShallowCopy()
+    {
+        return (Shipment)this.MemberwiseClone();
+    }
+
+    // =========================
+    // Deep Copy
+    // =========================
+
+    public Shipment DeepCopy()
+    {
+        Shipment copy = new Shipment(false);
+
+        copy.TrackingCode = this.TrackingCode;
+        copy.ShipmentType = this.ShipmentType;
+        copy.Weight = this.Weight;
+        copy.TrackingStatus = this.TrackingStatus;
+
+        copy.DeliveryAddress = new DeliveryAddress
+        {
+            City = this.DeliveryAddress.City,
+            Street = this.DeliveryAddress.Street
+        };
+
+        return copy;
+    }
+
+    // =========================
+    // Static Method
+    // =========================
+
+    public static int GetTotalShipmentsCreated()
+    {
+        return TotalShipmentsCreated;
+    }
+
+    // =========================
+    // Partial Method Declaration
+    // =========================
+
+    partial void OnTrackingStatusChanged(string newStatus);
+}
